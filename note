@@ -1,0 +1,18 @@
+peervpn-dnsmasq.conf
+
+interface dnsmasq0
+ifconfig4 10.10.10.1/24
+upcmd dnsmasq -i dnsmasq0 --dhcp-range=10.10.10.10,10.10.10.20,255.255.255.0,12h
+port 5678
+
+peervpn-dhclient.conf
+
+initpeers 127.0.0.1 5678
+interface dhclient0
+upcmd dhclient -nw dhclient0
+
+Apparently, DHCP will work over the VPN. So, you could have a static head node (in this example defined in peervpn-dhclient.conf with initpeers 127.0.0.1 5678) that serves up DHCP addresses.
+
+So, you would only need to specify a static address for one node (so dnsmasq can bind to an address) and each other nodes would need to know at least the head node's (or another node's) address.
+
+This was tested on a local machine but, I could see the DHCP working with tcpdump on the vpn interfaces.
