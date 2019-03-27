@@ -18,6 +18,9 @@ $ docker run --cap-add NET_ADMIN --network=host --device=/dev/net/tun -v $PWD/pe
 
 ## Releases
 
+### 1.1
+Removed random IP generation.
+
 ### 1.0
 
 Everything works great!
