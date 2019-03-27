@@ -6,6 +6,5 @@ RUN apk add --no-cache peervpn -X http://nl.alpinelinux.org/alpine/edge/testing
 RUN apk update && apk add bash iptables
 
 COPY peervpn.conf /etc/peervpn.conf
-COPY entrypoint.sh /
 
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/peervpn", "/etc/peervpn.conf"]
