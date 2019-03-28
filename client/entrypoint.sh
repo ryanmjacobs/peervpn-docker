@@ -6,7 +6,10 @@ static_ip="10.10.1.$((RANDOM % 251))"
 
 # dhcp client
 echo "ifconfig4 ${static_ip}/23" >> /tmp/peervpn.conf
-echo "upcmd timeout 25 udhcpc -i peervpn0" >> /tmp/peervpn.conf
+# WARNING: this timeout command is stupid; future OS versions deprecated
+#          the dash -t and this will throw an error. Busybox 1.29 -> 1.30
+#          breaks this
+echo "upcmd timeout -t 25 udhcpc -i peervpn0" >> /tmp/peervpn.conf
 
 # set temp. static ip if cdhcp fails
 set_static() {
