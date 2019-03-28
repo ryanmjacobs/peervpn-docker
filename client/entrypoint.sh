@@ -2,7 +2,7 @@
 cp /{etc,tmp}/peervpn.conf
 
 # generate static ip (for worse case)
-static_ip="10.10.1.((RANDOM % 251))"
+static_ip="10.10.1.$((RANDOM % 251))"
 
 # dhcp client
 echo "ifconfig4 ${static_ip}/23" >> /tmp/peervpn.conf
