@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=1.3
+ver=1.4
 
 pushd client
 docker build -t ryanmjacobs/peervpn-client:$ver .
