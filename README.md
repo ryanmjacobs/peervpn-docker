@@ -3,8 +3,10 @@
 DHCP and Docker-ized peervpn scripts. (If the DHCP-server node fails, future
 clients will pick a random static ip and pray that they don't over step anyone.)
 
-By default, DHCP clients are in the 10.10.0.0 to 10.10.0.250 block.<br>
+By default, DHCP clients are in the 10.10.0.10 to 10.10.0.250 block.<br>
 Static clients are in the 10.10.1.0 to 10.10.1.255 block.
+
+Master DHCP server is 10.10.0.1
 
 ## Usage
 
