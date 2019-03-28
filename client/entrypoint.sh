@@ -6,7 +6,7 @@ static_ip="10.10.1.$((RANDOM % 251))"
 
 # dhcp client
 echo "ifconfig4 ${static_ip}/23" >> /tmp/peervpn.conf
-echo "upcmd udhcpc -i peervpn0" >> /tmp/peervpn.conf
+echo "timeout 25 upcmd udhcpc -i peervpn0" >> /tmp/peervpn.conf
 
 # set temp. static ip if cdhcp fails
 set_static() {
