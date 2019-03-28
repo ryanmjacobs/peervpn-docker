@@ -1,7 +1,9 @@
 #!/bin/bash
 
+cp /{etc,tmp}/peervpn.conf
+
 # dhcp client
-echo "upcmd udhcpc -i peervpn0" >> /etc/peervpn.conf
+echo "upcmd udhcpc -i peervpn0" >> /tmp/peervpn.conf
 
 # set temp. static ip if cdhcp fails
 set_static() {
@@ -16,4 +18,4 @@ set_static() {
 set_static &
 
 # launch peervpn
-peervpn /etc/peervpn.conf
+peervpn /tmp/peervpn.conf

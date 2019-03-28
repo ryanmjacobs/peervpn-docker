@@ -21,7 +21,7 @@ Then build.
 Or... just write your peervpn.conf and run the pre-compiled image:
 
 ```console
-$ docker run --cap-add NET_ADMIN --network=host --device=/dev/net/tun -v $PWD/peervpn.conf:/etc/peervpn.conf -it ryanmjacobs/peervpn`
+$ docker run --cap-add NET_ADMIN --network=host --device=/dev/net/tun -v $PWD/peervpn.conf:/etc/peervpn.conf:ro -it ryanmjacobs/peervpn`
 ```
 
 (add the `-d` flag to run in background)
