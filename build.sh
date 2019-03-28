@@ -1,11 +1,11 @@
 #!/bin/bash
 
-version=1.3
+ver=1.3
 
 pushd client
-docker build -t ryanmjacobs/peervpn-client:1.4 .
+docker build -t ryanmjacobs/peervpn-client:$ver .
 popd
 
 pushd server
-docker build -t ryanmjacobs/peervpn-server:1.4 .
+docker build -t ryanmjacobs/peervpn-server:$ver .
 popd
