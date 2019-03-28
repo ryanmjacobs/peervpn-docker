@@ -8,6 +8,7 @@ static_ip="10.10.1.$((RANDOM % 251))"
 # dhcp client
 echo "upcmd dhclient -v -nw peervpn0" >> /tmp/peervpn.conf
 
+# set static ip on dhcp failure
 set_static() {
     sleep 30
     if ! ifconfig peervpn0 | grep "inet "; then
