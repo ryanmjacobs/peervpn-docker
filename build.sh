@@ -1,4 +1,4 @@
-#!/bin/bsah
+#!/bin/bash
 
 version=1.3
 
