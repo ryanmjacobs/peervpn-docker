@@ -4,7 +4,9 @@
 cp -v /{etc,tmp}/peervpn.conf
 
 # generate static ip
-static_ip="10.10.$((RANDOM%250 + 1)).$((RANDOM%250 + 1))"
+# 10.10.{1..3}.{1..3} are reserved
+# max client ip is 10.10.253.253
+static_ip="10.10.$((RANDOM%250 + 4)).$((RANDOM%250 + 4))"
 echo "RANDOM IP ----> $static_ip"
 echo "ifconfig4 ${static_ip}/16" >> /tmp/peervpn.conf
 
