@@ -7,5 +7,6 @@ RUN apk update && apk add bash iptables dhclient coreutils
 
 COPY peervpn.conf  /etc/peervpn.conf
 COPY entrypoint.sh /
+COPY upcmd.sh /
 
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

@@ -5,8 +5,8 @@ cp /{etc,tmp}/peervpn.conf
 static_ip="10.10.1.$((RANDOM % 251))"
 #echo "ifconfig4 ${static_ip}/23" >> /tmp/peervpn.conf
 
-# dhcp client
-echo "upcmd dhclient -v -nw peervpn0" >> /tmp/peervpn.conf
+# dhcp client and route modification
+echo "upcmd bash /upcmd.sh &" >> /tmp/peervpn.conf
 
 # set static ip on dhcp failure
 set_static() {
