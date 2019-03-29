@@ -14,6 +14,7 @@ set_ip() {
     sleep 1
     ifconfig peervpn0 ${static_ip}/16 # FUCK DOCKER
 }
+set_ip &
 
 # launch peervpn
 peervpn /tmp/peervpn.conf
