@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ver=1.7
+ver=1.8
 
 pushd client
 docker build -t ryanmjacobs/peervpn-client:$ver .
@@ -12,4 +12,8 @@ popd
 
 pushd peervpn-dhcp-server
 docker build -t ryanmjacobs/peervpn-dhcp-server:$ver .
+popd
+
+pushd peervpn
+docker build -t ryanmjacobs/peervpn:$ver .
 popd
