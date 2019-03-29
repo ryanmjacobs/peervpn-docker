@@ -1,5 +1,7 @@
 # peervpn-docker
 
+### note: rapid development. not stable.
+
 DHCP and Docker-ized peervpn scripts. (If the DHCP-server node fails, future
 clients will pick a random static ip and pray that they don't over step anyone.)
 
